@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@-webkit-keyframes appear{
+  0%{opacity: 0; transform: scale3d(1.1,1.1,1);}
+  50%{opacity: .5; transform: scale3d(1.05,1.05,1);}
+  100%{opacity: 1; transform: scale3d(1,1,1);}
+}
+@-webkit-keyframes hovering{
+    100% {transform: scale(2.5,2.6); top: 45px; font-size: 5px;color: white;}
+} 
+@-webkit-keyframes activehovering{
+    from{transform: scale(2.5,2.6); top: 45px; font-size: 5px;color: white;}
+    to{transform: scale(2.8,4); top: 70px; font-size:5px;color: white;max-width: 30ch;opacity: 1;}
+}
+
+body{
+background: black;
+display: flex;
+flex-direction: column;
+gap: 3em;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+font-family: "inter";
+font-size: var(--size);
+}
+.phone{
+    position: relative;
+    z-index: 1;
+    height:100vh;
+    width: 50vh;
+    aspect-ratio: 19.5/9;
+    border-radius:4.999em;
+    box-shadow:0px 0px 0px 2px rgb(192, 192, 192);
+    box-sizing: border-box;
+    opacity:0;
+    
+    -webkit-animation: appear 1s cubic-bezier(.62,.61,.85,.86) infinite;
+    animation: appear 1s cubic-bezier(.62,.61,.85,.86) forwards;
+    
+
+}
+.phone::before{
+    border:4px;
+    position: absolute;
+    top:5.222;
+    right: -5em;
+    left: -5em;
+    bottom: 5em;
+    border: 4px solid rgb(192, 192,192);
+
+}
+.buttons{
+    background-color: white;
+    position: absolute;
+    top:50px;
+    align-content: bottom;
+    
+    
+}
+.notch-container{
+    background-color:black;
+    right: 150px;
+    top:20px;
+    border-radius: 40px;
+    min-width: 154.833px;
+    min-height:35px;
+    transition: 0.2s;
+    position: absolute;
+    font-size: 0px;
+    
+    
+
+}
+.power{
+    width:0.3em;
+    top:210px;
+    height:10vh;
+    right:-.3em;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    
+}
+.mute{
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    top:140px;
+    height: 2em;
+    left:-.3em ;
+    background-color: white;
+    width: 0.3em;
+}
+.volume{
+    height:3em;
+    width:0.3em;
+    left: -.3em;
+    top:210px;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    
+    
+}
+.volume-down{
+    margin-top:70px ;
+}
+.screen{
+    margin: 10px;
+   
+}
+.screen-image{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius:4.999em;
+}
+.notch-container:hover{
+    -webkit-animation:hovering 0.2s linear forwards ;
+    animation: hovering 0.2s linear forwards;
+    
+}
+
+
+.top{
+    
+    border-top-left-radius: 7.999em;
+    border-top-right-radius: 7.999em;
+    border-bottom-left-radius:100% ;
+    border-bottom-right-radius:100%;
+    height:50vh;
+    border:1px solid ;
+    border-bottom-width: 5px;
+    border-right-width:0px;
+    border-top-width: 0px;
+    border-left-width:0px ;
+    border-color: rgb(192, 192, 192);
+    background:linear-gradient(0deg, rgba(0,0,0,1) 47%, rgba(82,34,215,1) 67%, rgba(128,34,215,1) 90%, rgba(215,34,159,1) 100%);
+}
+.sadgals{
+    margin-top: 6px;
+    margin-left: 6px;
+    
+    height: 1%;
+    
+    border-radius: 50%;
+  
+    
+    
+}
+.top-contents{
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+}
+
+.right-contents{
+    flex: 0.2;
+}
+.left-contents{
+    overflow: wrap;
+    max-width: 32ch;
+    flex:1;
+   
+    margin-top: 10px;
+    margin-left: 4px;
+}
+.bottom{
+    border-bottom-left-radius: 7.999em;
+    border-bottom-right-radius: 7.999em;
+    border-top-left-radius:100% ;
+    border-top-right-radius:100%;
+    height:46vh;
+    border:1px solid ;
+    border-top-width: 5px;
+    border-right-width:0px;
+    border-bottom-width: 0px;
+    border-left-width:0px ;
+    border-color: rgb(192, 192, 192);
+    background:linear-gradient(0deg, rgba(82,34,215,1) 12%, rgba(128,34,215,1) 34%, rgba(0,0,0,1) 70%);
+}
+.time {
+    font-size: 90px;
+    color: white;
+    margin-top: -7em;
+    margin-left:1.2em;
+   
+}
+
+.notch-container:active{
+    -webkit-animation: activehovering 0.1s ease-in-out forwards;
+     
+    
+ 
+ }
+
+.bottom-content{
+    width: 60px;
+    opacity: 0;
+    
+}
